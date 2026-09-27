@@ -26,9 +26,11 @@
 
 ## Pengujian dan Perbaikan
 
-- Galat yang ditemukan: [tuliskan]
+- Galat yang ditemukan: [tuliskan jika ada]
+- Penyebab galat: [tuliskan]
 - Perbaikan yang dilakukan: [tuliskan]
+- Hasil pengujian ulang: [tuliskan]
 
 ## GitHub Pages
 
-URL: [tempel URL halaman P3]
+URL: [tempel URL GitHub Pages Pertemuan 3]
