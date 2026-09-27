@@ -5,11 +5,6 @@
 - Menggunakan hasil P2 sebagai dasar pengembangan P3.
 - Menyalin `index.html` dan `img/foto-profil.jpg` ke `pertemuan-03/`.
 
-## Galat Awal
-
-- Galat yang ditemukan: [tuliskan]
-- Perbaikan yang dilakukan: [tuliskan]
-
 ## Implementasi Formulir
 
 - Elemen form yang digunakan: [tuliskan]
@@ -31,7 +26,7 @@
 
 ## Pengujian dan Perbaikan
 
-- Galat tambahan yang ditemukan: [tuliskan]
+- Galat yang ditemukan: [tuliskan]
 - Perbaikan yang dilakukan: [tuliskan]
 
 ## GitHub Pages
