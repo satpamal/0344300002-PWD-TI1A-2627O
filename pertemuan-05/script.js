@@ -37,6 +37,8 @@ contactForm.addEventListener("submit", (event) => {
   const prodi = prodiInput.value;
   const pesan = pesanInput.value.trim();
 
+  formFeedback.className = "form-feedback-error";
+
   if (nama.length < 3 || nama.length > 50) {
     formFeedback.textContent = "Nama lengkap harus diisi 3 sampai 50 karakter.";
     return;
@@ -85,6 +87,7 @@ contactForm.addEventListener("submit", (event) => {
   }
 
   formFeedback.textContent = "Form berhasil divalidasi.";
+  formFeedback.className = "form-feedback-success";
 });
 
 contactForm.addEventListener("reset", () => {
