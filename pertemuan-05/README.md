@@ -2,6 +2,7 @@ P5 — JavaScript Dasar, DOM, Event, dan Validasi Sisi Klien
 Deskripsi
 Dokumentasi pengembangan halaman web pada P5, meliputi JavaScript, DOM, event listener, interaksi navigasi, dan validasi formulir sisi klien.
 Fitur dan Pengembangan
+mencoba javascript internal dengan kondisi if else
 [Nama fitur/tahap]: [Penjelasan singkat perubahan yang dilakukan.]
 [Nama fitur/tahap]: [Penjelasan singkat perubahan yang dilakukan.]
 Tambahkan entri setiap kali ada perkembangan penting pada proyek.
