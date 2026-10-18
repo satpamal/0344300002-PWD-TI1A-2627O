@@ -13,3 +13,4 @@ mencoba operasi aritmetika di php untuk semester.
 menambahkan percabangan untuk semester untuk penentuan apakah semester di dalam rentang atau diluar rentang.
 percabangan semester untuk penentuan keterangan semester menggunakan if-elseif-else. setelah diuji hasil keterangan semester ada 3 macam.
 dibuat juga operator ternary untuk status keaktifan mahasiswa menggunakan ? :
+menambahkan percabangan switch-case-default untuk fokus program studi. Dari hasil pengujian, $programStudi mempengaruhi hasil percabangan.
