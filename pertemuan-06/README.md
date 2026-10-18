@@ -14,3 +14,4 @@ menambahkan percabangan untuk semester untuk penentuan apakah semester di dalam 
 percabangan semester untuk penentuan keterangan semester menggunakan if-elseif-else. setelah diuji hasil keterangan semester ada 3 macam.
 dibuat juga operator ternary untuk status keaktifan mahasiswa menggunakan ? :
 menambahkan percabangan switch-case-default untuk fokus program studi. Dari hasil pengujian, $programStudi mempengaruhi hasil percabangan.
+membuat perulangan for untuk target belajar ditampilkan dalam bentuk ordered list (nomor urut).
