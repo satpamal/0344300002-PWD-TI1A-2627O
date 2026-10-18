@@ -11,3 +11,4 @@ ternyata, konstanta itu sama dengan variabel, dimana tidak ditampilkan pada pera
 penggunaan variabel dan konstanta untuk section home dan profil github.
 mencoba operasi aritmetika di php untuk semester.
 menambahkan percabangan untuk semester untuk penentuan apakah semester di dalam rentang atau diluar rentang.
+percabangan semester untuk penentuan keterangan semester menggunakan if-elseif-else. setelah diuji hasil keterangan semester ada 3 macam.
