@@ -20,3 +20,4 @@ menampilkan angka desimal dengan format_number milik php untuk IPK.
 menampilkan catatan tambahan jika bernilai null.
 penggunaan fungsi date() php dan html entity &copy; copyright pada footer.
 bentuk pendek atau singkat dari php echo, yaitu <?= ... >
+mengganti action <form> dari index.html ke index.php
