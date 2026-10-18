@@ -7,3 +7,4 @@ menguji kode php komentar dan echo, dimana hasilnya saat CTRL+U tidak ditampilka
 penggunaan komentar pada php tidak ditampilkan di peramban, echo dan print sama-sama menghasilkan output yang serupa, pembahasan hanya untuk mengenalkan untuk output ada menggunakan echo dan print. saat dicoba pada peramban, hasilnya berupa string yang ditampilkan.
 saat menguji tag html secara langsung dan tag html yang ada di dalam php, ternyata outputnya sama saja. kesimpulannya php bisa merender html.
 menambahkan variabel dan nilainya (yang berbeda) di index.php, variabel tidak ditampilkan pada peramban.
+ternyata, konstanta itu sama dengan variabel, dimana tidak ditampilkan pada peramban.
