@@ -18,3 +18,4 @@ membuat perulangan for untuk target belajar ditampilkan dalam bentuk ordered lis
 membuat perulangan while untuk menampilkan nomor semester dalam bentuk ordered list (nomor urut).
 menampilkan angka desimal dengan format_number milik php untuk IPK.
 menampilkan catatan tambahan jika bernilai null.
+penggunaan fungsi date() php dan html entity &copy; copyright pada footer.

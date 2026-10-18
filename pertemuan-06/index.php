@@ -231,11 +231,8 @@ switch ($programStudi) {
 	</main>
 
 	<footer>
-		<p>&copy; 2026 Nama Mahasiswa [NIM]</p>
+		<p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p>
 	</footer>
-	<script>
-		console.log('JavaScript berhasil dijalankan.');
-	</script>
 	<script src="script.js"></script>
 </body>
 
