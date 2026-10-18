@@ -27,6 +27,9 @@ if ($semester < 3) {
 } else {
 	$keteranganSemester = "Semester akhir";
 }
+
+$namaProdi = ($programStudi == "SI") ? "Sistem Informasi" : (($programStudi == "TI") ? "Teknik Informatika" : "Lainnya");
+
 ?>
 <!doctype html>
 <html lang="id">
@@ -76,6 +79,8 @@ if ($semester < 3) {
 
 			<article>
 				<h3>Profil Singkat</h3>
+				<p>Program Studi: <?php echo $namaProdi . " (" . $programStudi . ")"; ?></p>
+				<p>Status mahasiswa: <?php echo $statusAktif ? "Aktif" : "Tidak aktif"; ?></p>
 				<p>Semester: <?php echo $semester . " (" . $keteranganSemester . ")"; ?></p>
 				<p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p>
 				<p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
