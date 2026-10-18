@@ -8,5 +8,5 @@ penggunaan komentar pada php tidak ditampilkan di peramban, echo dan print sama-
 saat menguji tag html secara langsung dan tag html yang ada di dalam php, ternyata outputnya sama saja. kesimpulannya php bisa merender html.
 menambahkan variabel dan nilainya (yang berbeda) di index.php, variabel tidak ditampilkan pada peramban.
 ternyata, konstanta itu sama dengan variabel, dimana tidak ditampilkan pada peramban.
-penggunaan variabel dan konstanta untuk section home.
+penggunaan variabel dan konstanta untuk section home dan profil github.
 mencoba operasi aritmetika di php untuk semester

@@ -86,7 +86,7 @@ $sisaSemester = $batasSemester - $semester;
 
 			<p>
 				Kunjungi
-				<a href="https://github.com/username">profil GitHub saya</a>.
+				<a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
 			</p>
 
 			<form id="contactForm" action="index.html" method="get" novalidate>
