@@ -9,3 +9,4 @@ pengembangan, pengujian, dan dokumentasi pertemuan-07:
 7. Mengubah isi file indexGet.php khususnya yang awalnya index.php menjadi indexGet.php.
 8. Mencoba penggunaan indexGet.php untuk pengamatan apakah formulir masih bisa dikirimkan. dari hasil ujicoba masih berhasil.
 9. menghapus percobaan penggunaan get pada pertemuan-07\index.php karena sekarang waktunya post yang dicoba. perubahan method dari get ke post secara visual tidak nampak perubahan.
+10. memodifikasi tulisan get pada index.php menjadi post. mencoba mengirim submit. dari hasil pengujian, nilai dan parameter tidak ditampilkan pada URL saat submit dengan post.
