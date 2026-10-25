@@ -5,3 +5,6 @@ pengembangan, pengujian, dan dokumentasi pertemuan-07:
 3. identifikasi elemen formulir, atribut name, serta atribut method dan action pada pertemuan-07\index.php, mencari penanganan event submit pada pertemuan-07\script.js terkait penggunaan event.preventDefault().
 4. praktik menggunakan superglobal $_GET untuk obyek name=nama dan penggunaannya melalui parameter di URL (index.php)
 5. menambah contactForm.submit(); agar form bisa di submit dan diproses dengan php. kemudian menguji men submit form dengan method get dengan data valid dan data tidak valid.
+6. menyalin pertemuan-07\index.php kemudian memberi nama salinan pertemuan-07\indexGet.php.
+7. Mengubah isi file indexGet.php khususnya yang awalnya index.php menjadi indexGet.php.
+8. Mencoba penggunaan indexGet.php untuk pengamatan apakah formulir masih bisa dikirimkan.
