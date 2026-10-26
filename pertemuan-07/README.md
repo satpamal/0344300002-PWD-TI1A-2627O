@@ -1,13 +1,4 @@
-pengembangan, pengujian, dan dokumentasi pertemuan-07:
+di pertemuan-07 saya mengembangkan, menguji, dan menghasilkan:
 
-1. menyalin artefak pertemuan-06 dan ditempel ke pertemuan-07. saat diuji hasil pada http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-07/ masih sama dengan http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-06/. jadi lanjutkan ke tahap 2.
-2. lokasi proyek berada pada http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-07/.
-3. identifikasi elemen formulir, atribut name, serta atribut method dan action pada pertemuan-07\index.php, mencari penanganan event submit pada pertemuan-07\script.js terkait penggunaan event.preventDefault().
-4. praktik menggunakan superglobal $_GET untuk obyek name=nama dan penggunaannya melalui parameter di URL (index.php)
-5. menambah contactForm.submit(); agar form bisa di submit dan diproses dengan php. kemudian menguji men submit form dengan method get dengan data valid dan data tidak valid.
-6. menyalin pertemuan-07\index.php kemudian memberi nama salinan pertemuan-07\indexGet.php.
-7. Mengubah isi file indexGet.php khususnya yang awalnya index.php menjadi indexGet.php.
-8. Mencoba penggunaan indexGet.php untuk pengamatan apakah formulir masih bisa dikirimkan. dari hasil ujicoba masih berhasil.
-9. menghapus percobaan penggunaan get pada pertemuan-07\index.php karena sekarang waktunya post yang dicoba. perubahan method dari get ke post secara visual tidak nampak perubahan.
-10. memodifikasi tulisan get pada index.php menjadi post. mencoba mengirim submit. dari hasil pengujian, nilai dan parameter tidak ditampilkan pada URL saat submit dengan post.
-11. mengakses data dari berbagai jenis input. mengubah const topikDipilih = document.querySelectorAll('input[name="minat"]:checked'); menjadi const topikDipilih = document.querySelectorAll('input[name="minat"]:checked, input[name="minat[]"]:checked');. hal ini diperlukan untuk indexGet.php masih menggunakan name minat, sedangkan untuk post menggunakan name minat[]. kemudian menguji kembali apakah minat masih dikenali 1 kelompok yang sama, hasilnya iya tetap berfungsi.
+1. menyalin artefak pertemuan-06 untuk digunakan sebagai baseline pertemuan-07
+2. event.preventDefault(); ternyata menghalangi eksekusi submit
