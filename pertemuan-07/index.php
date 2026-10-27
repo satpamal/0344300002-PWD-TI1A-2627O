@@ -61,6 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 
+  if (trim($email) !== '') {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
+      $pesanKesalahan .= 'Format email tidak valid. ';
+    }
+  }
+
   if (!in_array($jenisPesan, ['pertanyaan', 'saran'], true)) {
     $pesanKesalahan .= 'Jenis pesan tidak valid. ';
   }
@@ -131,34 +137,28 @@ switch ($programStudi) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $_SESSION['pesanKesalahan'] = $pesanKesalahan;
 
-  $_SESSION['dataForm'] = [
-    'nama' => $nama,
-    'email' => $email,
-    'semester' => $semesterForm,
-    'tanggal' => $tanggal,
-    'jenis_pesan' => $jenisPesan,
-    'prodi' => $prodi,
-    'minat' => $minat,
-    'pesan' => $pesan
-  ];
+  $_SESSION['nama'] = $nama;
+  $_SESSION['email'] = $email;
+  $_SESSION['semester'] = $semesterForm;
+  $_SESSION['tanggal'] = $tanggal;
+  $_SESSION['jenis_pesan'] = $jenisPesan;
+  $_SESSION['prodi'] = $prodi;
+  $_SESSION['minat'] = $minat;
+  $_SESSION['pesan'] = $pesan;
 
   header('Location: index.php');
   exit;
 }
 
 $pesanKesalahan = $_SESSION['pesanKesalahan'] ?? '';
-$dataForm = $_SESSION['dataForm'] ?? null;
-
-if (is_array($dataForm)) {
-  $nama = $dataForm['nama'];
-  $email = $dataForm['email'];
-  $semesterForm = $dataForm['semester'];
-  $tanggal = $dataForm['tanggal'];
-  $jenisPesan = $dataForm['jenis_pesan'];
-  $prodi = $dataForm['prodi'];
-  $minat = $dataForm['minat'];
-  $pesan = $dataForm['pesan'];
-}
+$nama = $_SESSION['nama'] ?? '';
+$email = $_SESSION['email'] ?? '';
+$semesterForm = $_SESSION['semester'] ?? '';
+$tanggal = $_SESSION['tanggal'] ?? date("Y-m-d");
+$jenisPesan = $_SESSION['jenis_pesan'] ?? '';
+$prodi = $_SESSION['prodi'] ?? '';
+$minat = $_SESSION['minat'] ?? '';
+$pesan = $_SESSION['pesan'] ?? '';
 ?>
 <!doctype html>
 <html lang="id">
@@ -359,7 +359,7 @@ if (is_array($dataForm)) {
         <p id="formFeedback"></p>
       </form>
 
-      <?php if (is_array($dataForm)): ?>
+      <?php if (!empty($nama)): ?>
         <h3>Data yang Diterima Peladen</h3>
 
         <p>Nama:
