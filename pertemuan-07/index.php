@@ -11,6 +11,9 @@ $nama = $_SESSION["nama"] ?? "";
 $email = $_SESSION["email"] ?? "";
 $semester = $_SESSION["semester"] ?? "";
 
+if (strlen($nama) < 3 || strlen($nama) > 50):
+	echo "nama harus minimal 3 karakter dan maksimal 50 karakter.";
+endif;
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
 $nim = "0344300002";
@@ -172,7 +175,7 @@ switch ($programStudi) {
 						placeholder="Masukkan nama lengkap"
 						minlength="3"
 						maxlength="50"
-						value="<?php echo $nama; ?>"
+						value="<?php echo htmlspecialchars($nama); ?>"
 						required />
 				</div>
 
