@@ -1,4 +1,13 @@
 <?php
+//P7
+echo $_GET["nama"] . "<br>";
+echo $_GET["email"] . "<br>";
+echo $_GET["semester"] . "<br>";
+echo $_GET["tanggal"] . "<br>";
+echo $_GET["jenis_pesan"] . "<br>";
+echo $_GET["prodi"] . "<br>";
+echo $_GET["pesan"] . "<br>";
+
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
 $nim = "0344300002";
