@@ -1,9 +1,86 @@
 <?php
 // P7: penggunaan POST
-if (isset($_POST['nama'])) {
-  $nama = $_POST['nama'];
-  echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8');
+$nama = trim((string) ($_POST['nama'] ?? ''));
+$email = trim((string) ($_POST['email'] ?? ''));
+$semesterForm = trim((string) ($_POST['semester'] ?? ''));
+$jenisPesan = trim((string) ($_POST['jenis_pesan'] ?? ''));
+$prodi = trim((string) ($_POST['prodi'] ?? ''));
+$pesan = trim((string) ($_POST['pesan'] ?? ''));
+$tanggal = trim((string) ($_POST['tanggal'] ?? ''));
+$minat = $_POST['minat'] ?? [];
+
+$pesanKesalahan = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (trim($nama ?? '') === '') {
+    $pesanKesalahan .= 'Nama lengkap wajib diisi. ';
+  }
+
+  if (trim($email) === '') {
+    $pesanKesalahan .= 'Email wajib diisi. ';
+  }
+
+  if (trim($semesterForm) === '') {
+    $pesanKesalahan .= 'Semester wajib diisi. ';
+  }
+
+  if (trim($tanggal) === '') {
+    $pesanKesalahan .= 'Tanggal kunjungan wajib diisi. ';
+  }
+
+  if ($jenisPesan === '') {
+    $pesanKesalahan .= 'Jenis pesan wajib dipilih. ';
+  }
+
+  if ($prodi === '') {
+    $pesanKesalahan .= 'Program studi wajib dipilih. ';
+  }
+
+  if (trim($pesan) === '') {
+    $pesanKesalahan .= 'Pesan wajib diisi. ';
+  }
+
+  if (empty($minat)) {
+    $pesanKesalahan .= 'Minat wajib dipilih minimal satu. ';
+  }
+
+  if (trim($semesterForm) !== '') {
+    $semesterValid = filter_var(
+      $semesterForm,
+      FILTER_VALIDATE_INT
+    );
+
+    if (
+      $semesterValid === false ||
+      $semesterValid < 1 ||
+      $semesterValid > 14
+    ) {
+      $pesanKesalahan .= 'Semester harus berupa bilangan bulat antara 1 dan 14. ';
+    }
+  }
+
+  if (!in_array($jenisPesan, ['pertanyaan', 'saran'], true)) {
+    $pesanKesalahan .= 'Jenis pesan tidak valid. ';
+  }
+
+  if (!in_array($prodi, ['SI', 'TI'], true)) {
+    $pesanKesalahan .= 'Program studi tidak valid. ';
+  }
+
+  $minatDiizinkan = ['HTML', 'CSS'];
+
+  if (!is_array($minat)) {
+    $pesanKesalahan .= 'Format pilihan topik tidak valid. ';
+  } else {
+    foreach ($minat as $topik) {
+      if (!in_array($topik, $minatDiizinkan, true)) {
+        $pesanKesalahan .= 'Pilihan topik tidak valid. ';
+        break;
+      }
+    }
+  }
 }
+
 
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
@@ -149,6 +226,13 @@ switch ($programStudi) {
     <section id="contact">
       <h2>Kontak</h2>
 
+      <?php if ($pesanKesalahan !== ''): ?>
+        <p class="form-feedback-error">
+          <?= htmlspecialchars($pesanKesalahan, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+      <?php endif; ?>
+
+
       <p>
         Kunjungi
         <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
@@ -200,10 +284,10 @@ switch ($programStudi) {
         <div class="form-group">
           <p>Topik yang Diminati</p>
 
-          <input type="checkbox" id="minat-html" name="minat" value="HTML" />
+          <input type="checkbox" id="minat-html" name="minat[]" value="HTML" />
           <label for="minat-html">HTML</label>
 
-          <input type="checkbox" id="minat-css" name="minat" value="CSS" />
+          <input type="checkbox" id="minat-css" name="minat[]" value="CSS" />
           <label for="minat-css">CSS</label>
         </div>
 
