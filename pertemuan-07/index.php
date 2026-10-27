@@ -1,12 +1,12 @@
 <?php
 //P7
-echo $_GET["nama"] . "<br>";
-echo $_GET["email"] . "<br>";
-echo $_GET["semester"] . "<br>";
-echo $_GET["tanggal"] . "<br>";
-echo $_GET["jenis_pesan"] . "<br>";
-echo $_GET["prodi"] . "<br>";
-echo $_GET["pesan"] . "<br>";
+echo $_POST["nama"] . "<br>";
+echo $_POST["email"] . "<br>";
+echo $_POST["semester"] . "<br>";
+echo $_POST["tanggal"] . "<br>";
+echo $_POST["jenis_pesan"] . "<br>";
+echo $_POST["prodi"] . "<br>";
+echo $_POST["pesan"] . "<br>";
 
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
@@ -157,7 +157,7 @@ switch ($programStudi) {
 				<a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
 			</p>
 
-			<form id="contactForm" action="index.php" method="get" novalidate>
+			<form id="contactForm" action="index.php" method="post" novalidate>
 				<div class="form-group">
 					<label for="nama">Nama Lengkap</label><br />
 
