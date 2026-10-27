@@ -14,3 +14,4 @@ yang saya lakukan di pertemuan-07:
 13. melakukan normalisasi dan sanitasi untuk setiap input menggunakan trim() dan (string).
 14.  menghapus blok percabangan nama. membuat blok penampil pesan kesalahan. menonaktifkan pemanggilan script.js pada index.php, kemudian menguji submit form dan pesan kesalahan berhasil ditampilkan. setelah pengujian, script.js diaktifkan kembali.
 15.  menghasilkan keluaran yang aman dari variabel hasil input form.
+16.  menambahkan session_start() pada awal blok php dan menerapkan session ke output data yang diinput.

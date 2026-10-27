@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // P7: penggunaan POST
 $nama = trim((string) ($_POST['nama'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
@@ -124,6 +126,39 @@ switch ($programStudi) {
   default:
     $fokusProgramStudi = "Belum ditentukan";
 }
+
+// P7
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $_SESSION['pesanKesalahan'] = $pesanKesalahan;
+
+  $_SESSION['dataForm'] = [
+    'nama' => $nama,
+    'email' => $email,
+    'semester' => $semesterForm,
+    'tanggal' => $tanggal,
+    'jenis_pesan' => $jenisPesan,
+    'prodi' => $prodi,
+    'minat' => $minat,
+    'pesan' => $pesan
+  ];
+
+  header('Location: index.php');
+  exit;
+}
+
+$pesanKesalahan = $_SESSION['pesanKesalahan'] ?? '';
+$dataForm = $_SESSION['dataForm'] ?? null;
+
+if (is_array($dataForm)) {
+  $nama = $dataForm['nama'];
+  $email = $dataForm['email'];
+  $semesterForm = $dataForm['semester'];
+  $tanggal = $dataForm['tanggal'];
+  $jenisPesan = $dataForm['jenis_pesan'];
+  $prodi = $dataForm['prodi'];
+  $minat = $dataForm['minat'];
+  $pesan = $dataForm['pesan'];
+}
 ?>
 <!doctype html>
 <html lang="id">
@@ -230,6 +265,12 @@ switch ($programStudi) {
         <p class="form-feedback-error">
           <?= htmlspecialchars($pesanKesalahan, ENT_QUOTES, 'UTF-8') ?>
         </p>
+
+        <?php
+        unset(
+          $_SESSION['pesanKesalahan']
+        );
+        ?>
       <?php endif; ?>
 
 
@@ -317,7 +358,8 @@ switch ($programStudi) {
         <button type="reset">Batal</button>
         <p id="formFeedback"></p>
       </form>
-      <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?>
+
+      <?php if (is_array($dataForm)): ?>
         <h3>Data yang Diterima Peladen</h3>
 
         <p>Nama:
