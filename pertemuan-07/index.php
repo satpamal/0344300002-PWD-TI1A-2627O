@@ -1,19 +1,4 @@
 <?php
-session_start();
-// P7 : menangkap nilai dari input form, disimpan ke session
-if (isset($_POST["nama"]) && isset($_POST["email"]) && isset($_POST["semester"])) {
-	$_SESSION["nama"] = $_POST["nama"];
-	$_SESSION["email"] = $_POST["email"];
-	$_SESSION["semester"] = $_POST["semester"];
-}
-// P7 : nilai dari session disimpan ke dalam variabel lokal
-$nama = $_SESSION["nama"] ?? "";
-$email = $_SESSION["email"] ?? "";
-$semester = $_SESSION["semester"] ?? "";
-
-if (strlen($nama) < 3 || strlen($nama) > 50):
-	echo "nama harus minimal 3 karakter dan maksimal 50 karakter.";
-endif;
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
 $nim = "0344300002";
@@ -163,7 +148,7 @@ switch ($programStudi) {
 				<a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
 			</p>
 
-			<form id="contactForm" action="index.php" method="post" novalidate>
+			<form id="contactForm" action="index.php" method="get" novalidate>
 				<div class="form-group">
 					<label for="nama">Nama Lengkap</label><br />
 
@@ -175,26 +160,19 @@ switch ($programStudi) {
 						placeholder="Masukkan nama lengkap"
 						minlength="3"
 						maxlength="50"
-						value="<?php echo htmlspecialchars($nama); ?>"
 						required />
 				</div>
 
 				<div class="form-group">
 					<label for="email">Email</label><br />
 
-					<input class="input-form" type="email"
-						id="email" name="email"
-						value="<?= $email; ?>"
-						placeholder="nama@email.com" required />
+					<input class="input-form" type="email" id="email" name="email" placeholder="nama@email.com" required />
 				</div>
 
 				<div class="form-group">
 					<label for="semester">Semester</label><br />
 
-					<input class="input-form" type="number"
-						id="semester" name="semester"
-						value="<?= $semester; ?>"
-						min="1" max="14" required />
+					<input class="input-form" type="number" id="semester" name="semester" min="1" max="14" required />
 				</div>
 
 				<div class="form-group">
