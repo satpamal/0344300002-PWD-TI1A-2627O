@@ -13,4 +13,4 @@ yang saya lakukan di pertemuan-07:
 12. menambah validasi array untuk isian pilihan yang valid pada pertemuan-07\index.php untuk input pesan dan minat.
 13. melakukan normalisasi dan sanitasi untuk setiap input menggunakan trim() dan (string).
 14.  menghapus blok percabangan nama. membuat blok penampil pesan kesalahan. menonaktifkan pemanggilan script.js pada index.php, kemudian menguji submit form dan pesan kesalahan berhasil ditampilkan. setelah pengujian, script.js diaktifkan kembali.
-15.  
+15.  menghasilkan keluaran yang aman dari variabel hasil input form.
