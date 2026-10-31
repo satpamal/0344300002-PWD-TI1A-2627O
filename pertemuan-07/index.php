@@ -1,6 +1,10 @@
 <?php
 //P7
-echo $_POST["nama"] . "<br>";
+$nama = $_POST["nama"];
+echo strtoupper($nama) . "<br>";
+if (strlen($nama) > 10):
+	echo "woi name ge panjang ge.<br>";
+endif;
 echo $_POST["email"] . "<br>";
 echo $_POST["semester"] . "<br>";
 echo $_POST["tanggal"] . "<br>";
