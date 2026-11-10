@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+$contohArray = ["rafli", "eno", "hariono", "ringo", "aldi"];
+echo $contohArray[1];
+// $contohArray[10] = "cinta";
+// echo $contohArray[10];
+
+
 // P7: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$nama = trim((string) ($_POST["nama"] ?? ""));
