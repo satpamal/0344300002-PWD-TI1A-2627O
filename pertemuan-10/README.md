@@ -12,3 +12,6 @@ saya melakukan hal sebagai berikut untuk P10:
 8. menentukan nama kolom/field, tipe data, batasan penyimpanan untuk tiap input.
 9. walaupun terdapat 8 input pada form yang dibuat juga 8 kolom, untuk kasus form kontak, maka perlu ditambahkan 1 kolom baru dengan nama id sebagai primary key auto increment.
 10. penentuan akhir struktur tabel final yang akan digunakan untuk formulir kontak.
+11. berhasil membuat basis data dengan nama db_pwd_0344300002.
+12. menentukan nama tabel tbl_kontak_0344300002 dengan jumlah kolom 9 buah.
+13. berhasil membuat tabel berserta strukturnya tbl_kontak_nim di phpmyadmin.
