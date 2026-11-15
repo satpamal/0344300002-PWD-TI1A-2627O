@@ -11,3 +11,4 @@ saya melakukan hal sebagai berikut untuk P10:
 7. menentukan nama basis data dan nama tabel dengan bentuk db_pwd_nim dan tbl_kontak_nim.
 8. menentukan nama kolom/field, tipe data, batasan penyimpanan untuk tiap input.
 9. walaupun terdapat 8 input pada form yang dibuat juga 8 kolom, untuk kasus form kontak, maka perlu ditambahkan 1 kolom baru dengan nama id sebagai primary key auto increment.
+10. penentuan akhir struktur tabel final yang akan digunakan untuk formulir kontak.
