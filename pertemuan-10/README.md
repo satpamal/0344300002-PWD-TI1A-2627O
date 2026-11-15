@@ -21,3 +21,4 @@ saya melakukan hal sebagai berikut untuk P10:
 17. berhasil menambahkan data ke tabel tbl_kontak_nim menggunakan DML (Data Manipulation Language) INSERT sebagai data awal.
 18. memeriksa record yang telah ditambahkan menggunakan menu Browse pada phpmyadmin.
 19. dikarenakan saya tidak menemukan masalah saat pengisian data, maka saya tidak melakukan pengeditan data.
+20. melakukan pengaturan ekspor tabel di basis data dengan method quick dan format SQL.
