@@ -16,3 +16,4 @@ saya melakukan hal sebagai berikut untuk P10:
 12. menentukan nama tabel tbl_kontak_0344300002 dengan jumlah kolom 9 buah.
 13. berhasil membuat tabel berserta strukturnya tbl_kontak_nim di phpmyadmin.
 14. ternyata, selain menggunakan interface phpmyadmin, untuk membuat basis data, tabel, dan struktur tabel bisa menggunakan DDL (Data Definition Language).
+15. melihat kembali struktur tabel tbl_kontak_nim untuk mengetahui kesesuaian dengan instruksi pada modul. hasilnya sudah sesuai.
