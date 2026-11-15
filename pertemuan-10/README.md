@@ -23,3 +23,4 @@ saya melakukan hal sebagai berikut untuk P10:
 19. dikarenakan saya tidak menemukan masalah saat pengisian data, maka saya tidak melakukan pengeditan data.
 20. melakukan pengaturan ekspor tabel di basis data dengan method quick dan format SQL.
 21. berhasil mengekspor berkas basis data db_pwd_nim.sql dan dipindahken ke pertemuan-10\.
+22. memeriksa berkas hasil ekspor basis data db_pwd_nim.sql, isinya benar ada struktur tabel kontak dan record awal yang sudah diinput.
