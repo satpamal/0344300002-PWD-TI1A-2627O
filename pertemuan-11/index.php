@@ -5,6 +5,27 @@ session_start();
 require_once("fungsi.php"); #Penggunaan require_once() memastikan berkas tersebut tersedia dan tidak dimuat berulang kali.
 require_once("koneksi.php"); #Memuat berkas koneksi PHP-MySQL menggunakan MySQLi.
 
+// P11: Mengambil data kontak dari basis data menggunakan operasi READ.
+$sql = "SELECT * FROM tbl_kontak_0344300002";
+$hasil = mysqli_query($koneksi, $sql);
+
+// Memeriksa keberhasilan kueri SELECT.
+if (!$hasil) {
+  die("Kueri SELECT gagal dijalankan.");
+}
+
+// Mengambil hasil kueri sebagai larik asosiatif.
+$dataKontak = [];
+
+while ($baris = mysqli_fetch_assoc($hasil)) {
+  $dataKontak[] = $baris;
+}
+
+// Pengujian sementara hasil pengambilan data.
+echo "<pre>";
+var_dump($dataKontak);
+echo "</pre>";
+
 // P9: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nama = trim((string) ($_POST["nama"] ?? ""));
