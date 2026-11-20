@@ -86,3 +86,14 @@ string(35) "Saya ingin belajar pemrograman web."
 26. Menguji penyajian data dan kondisi data tidak tersedia melalui localhost.
 
 **Hasil pengujian:** Saat membuka URL http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-11/, data sesuai tabel kontak, ditampilkan di bawah formulir.
+
+26. Menguji penanganan kegagalan koneksi PHP-MySQL menggunakan MySQLi.
+27. Menguji penanganan kegagalan kueri SELECT.
+28. Memastikan aplikasi kembali berjalan normal setelah pengujian.
+
+**Hasil pengujian:**
+
+- Kegagalan koneksi: Warning: mysqli_connect(): (HY000/1049): Unknown database 'db_tidak_tersedia' in C:\laragon\www\pwd\0344300002-PWD-TI1A-2627O\pertemuan-11\koneksi.php on line 10
+  Koneksi ke basis data gagal.
+- Kegagalan kueri SELECT: Kueri SELECT gagal dijalankan.
+- Pengujian setelah konfigurasi dikembalikan: Menampilkan aplikasi yang normal.
