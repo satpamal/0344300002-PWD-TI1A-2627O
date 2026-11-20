@@ -76,3 +76,13 @@ string(2) "TI"
 string(35) "Saya ingin belajar pemrograman web."
 }
 }
+
+20. Menghapus pemrosesan dan penyajian hasil formulir berbasis session P10.
+21. Mengganti penyajian hasil formulir dengan data yang diambil dari basis data MySQL.
+22. Menampilkan data hasil SELECT menggunakan elemen HTML.
+23. Mengambil setiap atribut dari larik asosiatif menggunakan `foreach`.
+24. Mengamankan keluaran HTML menggunakan fungsi `bersihkan()`.
+25. Menangani kondisi ketika tabel kontak tidak memiliki data.
+26. Menguji penyajian data dan kondisi data tidak tersedia melalui localhost.
+
+**Hasil pengujian:** Saat membuka URL http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-11/, data sesuai tabel kontak, ditampilkan di bawah formulir.

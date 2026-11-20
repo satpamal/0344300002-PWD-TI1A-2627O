@@ -1,6 +1,5 @@
 <?php
-#kode setelah
-session_start();
+#session_start();
 
 require_once("fungsi.php"); #Penggunaan require_once() memastikan berkas tersebut tersedia dan tidak dimuat berulang kali.
 require_once("koneksi.php"); #Memuat berkas koneksi PHP-MySQL menggunakan MySQLi.
@@ -22,12 +21,12 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
 }
 
 // Pengujian sementara hasil pengambilan data.
-echo "<pre>";
+/* echo "<pre>";
 var_dump($dataKontak);
-echo "</pre>";
+echo "</pre>"; */
 
 // P9: Memproses data formulir dan menyimpannya ke dalam session.
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
+/* if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $nama = trim((string) ($_POST["nama"] ?? ""));
   $email = trim((string) ($_POST["email"] ?? ""));
   $semesterForm = trim((string) ($_POST["semester"] ?? ""));
@@ -58,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   header("Location: index.php#contact");
   exit;
 }
-
+ */
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
 $nim = "0344300002";
@@ -283,51 +282,31 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
         <p class="form-feedback" data-form-feedback aria-live="polite"></p>
       </form>
 
-      <?php if (isset($_SESSION["form_data"])): ?>
-        <?php
-        // Larik asosiatif untuk menghubungkan nama field dengan label.
-        /*
-				kunci larik tidak harus berupa angka. 
-				Kunci dapat berupa teks yang memiliki makna tertentu.
-				*/
-        $labelMap = [
-          "nama"        => "Nama Lengkap",
-          "email"       => "Email",
-          "semester"    => "Semester",
-          "tanggal"     => "Tanggal Kunjungan",
-          "jenis_pesan" => "Jenis Pesan",
-          "prodi"       => "Program Studi",
-        ];
-        ?>
-        <article id="hasilKontak" class="submission-result" aria-live="polite">
-          <h3>Data Formulir yang Dikirim</h3>
 
-          <?php foreach ($labelMap as $key => $label): ?>
-            <p><strong><?= bersihkan($label); ?>:</strong> <?= bersihkan($_SESSION["form_data"][$key]); ?></p>
+
+      <article id="hasilKontak" class="submission-result">
+        <h3>Data Kontak Tersimpan</h3>
+
+        <?php if (count($dataKontak) > 0): ?>
+          <?php foreach ($dataKontak as $data): ?>
+            <section>
+              <p><strong>ID:</strong> <?= bersihkan($data["id"]); ?></p>
+              <p><strong>Nama:</strong> <?= bersihkan($data["nama"]); ?></p>
+              <p><strong>Email:</strong> <?= bersihkan($data["email"]); ?></p>
+              <p><strong>Semester:</strong> <?= bersihkan($data["semester"]); ?></p>
+              <p><strong>Tanggal Kunjungan:</strong> <?= bersihkan($data["tanggal"]); ?></p>
+              <p><strong>Jenis Pesan:</strong> <?= bersihkan($data["jenis_pesan"]); ?></p>
+              <p><strong>Topik yang Diminati:</strong> <?= bersihkan($data["minat"]); ?></p>
+              <p><strong>Program Studi:</strong> <?= bersihkan($data["prodi"]); ?></p>
+              <p><strong>Pesan:</strong> <?= nl2br(bersihkan($data["pesan"])); ?></p>
+            </section>
           <?php endforeach; ?>
+        <?php else: ?>
+          <p>Belum ada data kontak yang tersimpan.</p>
+        <?php endif; ?>
+      </article>
 
-          <?php
-          /*
-						$key untuk mendapatkan kunci larik.
-						$label untuk mendapatkan nilai larik.
-						$key untuk mengakses data formulir pada $_SESSION["form_data"].
-					*/
-          ?>
 
-          <p><strong>Topik yang Diminati:</strong></p>
-          <?php if (count($_SESSION["form_data"]["minat"]) > 0): ?>
-            <ul>
-              <?php foreach ($_SESSION["form_data"]["minat"] as $topik): ?>
-                <li><?= bersihkan($topik); ?></li>
-              <?php endforeach; ?>
-            </ul>
-          <?php else: ?>
-            <p>Belum ada topik yang dipilih.</p>
-          <?php endif; ?>
-
-          <p><strong>Pesan:</strong> <?= nl2br(bersihkan($_SESSION["form_data"]["pesan"])); ?></p>
-        </article>
-      <?php endif; ?>
     </section>
   </main>
 
