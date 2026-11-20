@@ -285,7 +285,7 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
 
 
       <article id="hasilKontak" class="submission-result">
-        <h3>Data Kontak Tersimpan</h3>
+        <h3>Data Kontak dari Basis Data</h3>
 
         <?php if (count($dataKontak) > 0): ?>
           <?php foreach ($dataKontak as $data): ?>
