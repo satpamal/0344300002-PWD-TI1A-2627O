@@ -16,3 +16,10 @@ Saya melakukan hal sebagai berikut untuk P11:
 9. Menambahkan pemeriksaan kondisi kegagalan koneksi agar aplikasi dapat menghentikan proses apabila koneksi tidak berhasil.
 
 **Hasil pemeriksaan:** Berkas `koneksi.php` telah dibuat. Pengujian keberhasilan koneksi akan dilakukan pada tahap integrasi dengan `index.php`.
+
+10. Mengintegrasikan berkas `koneksi.php` ke dalam `index.php` menggunakan `require_once()` agar halaman utama dapat menggunakan koneksi PHP-MySQL.
+11. Memastikan layanan Apache dan MySQL berjalan serta basis data `db_pwd_0344300002` tersedia melalui phpMyAdmin.
+12. Mengakses aplikasi P11 melalui localhost untuk memeriksa keberhasilan pemuatan berkas koneksi.
+13. Memeriksa bahwa halaman profil, navigasi, dan formulir tetap tampil seperti pada P10.
+
+**Hasil pengujian:** saat mengakses URL http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-11/koneksi.php, hanya tampil jendela putih, hal ini menunjukkan koneksi PHP ke MySQL berhasil. begitu juga saat mengakses URL http://localhost/pwd/0344300002-PWD-TI1A-2627O/pertemuan-11/ tampilan aplikasi tetap normal.
