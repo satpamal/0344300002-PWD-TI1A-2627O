@@ -8,7 +8,7 @@ require_once("koneksi.php");
 
 // P11: Mengambil data kontak dari basis data menggunakan operasi READ.
 $sql = "SELECT * FROM tbl_kontak_nim";
-
+$hasil = mysqli_query($koneksi, $sql);
 
 // P9: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
