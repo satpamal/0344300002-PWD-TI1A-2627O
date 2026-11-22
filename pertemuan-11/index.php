@@ -21,6 +21,10 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
 	$dataKontak[] = $baris;
 }
 
+// P11: Pengujian sementara hasil pengambilan data.
+/* echo "<pre>";
+var_dump($dataKontak);
+echo "</pre>"; */
 
 // P9: Memproses data formulir dan menyimpannya ke dalam session.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
