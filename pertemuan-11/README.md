@@ -68,6 +68,11 @@ Pengembangan P11 dilakukan secara bertahap dengan menggunakan artefak P10 sebaga
 - **Kegagalan kueri SELECT:** Aplikasi menampilkan pesan `Kueri SELECT gagal dijalankan.`
 - **Pemulihan aplikasi:** Setelah konfigurasi dikembalikan, aplikasi dapat menampilkan halaman dan data kontak secara normal.
 
+### Membersihkan jejak pertemuan sebelumnya pada berkas:
+
+30. db_pwd_nim.sql
+31. index.php
+
 ### Kesimpulan
 
 Pengembangan P11 telah menerapkan integrasi PHP dengan MySQL menggunakan MySQLi untuk mengambil dan menampilkan data kontak dari basis data. Implementasi mencakup penggunaan berkas koneksi terpisah, kueri SELECT, pengambilan data menggunakan `mysqli_fetch_assoc()`, pengamanan keluaran HTML, serta penanganan kegagalan koneksi, kegagalan kueri, dan kondisi tabel tanpa data.

@@ -1,10 +1,6 @@
 <?php
-#dimatikan pada P11
-#session_start();
-
-require_once("fungsi.php"); #Penggunaan require_once() memastikan berkas tersebut tersedia dan tidak dimuat berulang kali.
-#P11
-require_once("koneksi.php");
+require_once("fungsi.php");
+require_once("koneksi.php"); # P11
 
 // P11: Mengambil data kontak dari basis data menggunakan operasi READ.
 $sql = "SELECT * FROM tbl_kontak_nim";
@@ -304,57 +300,9 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
 				<?php else: ?>
 					<p>Belum ada data kontak yang tersimpan.</p>
 				<?php endif; ?>
-		</section>
-
-		<?php if (isset($_SESSION["form_data"])): ?>
-			<?php
-			// Larik asosiatif untuk menghubungkan nama field dengan label.
-			/*
-				kunci larik tidak harus berupa angka. 
-				Kunci dapat berupa teks yang memiliki makna tertentu.
-				*/
-			$labelMap = [
-				"nama"        => "Nama Lengkap",
-				"email"       => "Email",
-				"semester"    => "Semester",
-				"tanggal"     => "Tanggal Kunjungan",
-				"jenis_pesan" => "Jenis Pesan",
-				"prodi"       => "Program Studi",
-			];
-			?>
-
-
-
-
-			<h3>Data Formulir yang Dikirim</h3>
-
-			<?php foreach ($labelMap as $key => $label): ?>
-				<p><strong><?= bersihkan($label); ?>:</strong> <?= bersihkan($_SESSION["form_data"][$key]); ?></p>
-			<?php endforeach; ?>
-
-			<?php
-			/*
-						$key untuk mendapatkan kunci larik.
-						$label untuk mendapatkan nilai larik.
-						$key untuk mengakses data formulir pada $_SESSION["form_data"].
-					*/
-			?>
-
-			<p><strong>Topik yang Diminati:</strong></p>
-			<?php if (count($_SESSION["form_data"]["minat"]) > 0): ?>
-				<ul>
-					<?php foreach ($_SESSION["form_data"]["minat"] as $topik): ?>
-						<li><?= bersihkan($topik); ?></li>
-					<?php endforeach; ?>
-				</ul>
-			<?php else: ?>
-				<p>Belum ada topik yang dipilih.</p>
-			<?php endif; ?>
-
-			<p><strong>Pesan:</strong> <?= nl2br(bersihkan($_SESSION["form_data"]["pesan"])); ?></p>
 			</article>
-		<?php endif; ?>
 		</section>
+
 	</main>
 
 	<footer>
