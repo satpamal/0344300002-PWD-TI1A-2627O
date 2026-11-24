@@ -490,7 +490,7 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
 	<footer>
 		<p>&copy; <?= date("Y"); ?> <?= bersihkan($namaMahasiswa); ?> [<?= bersihkan($nim); ?>]</p>
 	</footer>
-	<!--<script src="script.js"></script>-->
+	<script src="script.js"></script>
 </body>
 
 </html>

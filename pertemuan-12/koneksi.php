@@ -14,3 +14,6 @@ $koneksi = mysqli_connect($host, $user, $password, $database);
 if (!$koneksi) {
   die("Koneksi ke basis data gagal.");
 }
+
+// Mengatur charset koneksi ke UTF-8.
+mysqli_set_charset($koneksi, "utf8mb4");
