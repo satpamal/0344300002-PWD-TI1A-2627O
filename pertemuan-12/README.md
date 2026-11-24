@@ -24,3 +24,11 @@ Status: Penyalinan artefak P11 telah dilakukan. Belum ada perubahan implementasi
 HASIL PEMERIKSAAN: berdasarkan pemeriksaan aktual pada direktori P12 masih bisa bekerja dengan baik.
 
 CATATAN: Belum dilakukan implementasi operasi INSERT. Baseline P11 dipertahankan sebagai dasar pengembangan P12.
+
+### TAHAP 3: PERSIAPAN SESSION
+
+1. Menambahkan session_start() pada bagian awal index.php.
+2. Memastikan session diaktifkan sebelum data session digunakan.
+3. Mempertahankan fungsi dan koneksi yang sudah tersedia dari artefak P11.
+
+TUJUAN: Menyiapkan mekanisme session untuk pengelolaan old input dan flash message pada proses CREATE P12.

@@ -1,4 +1,5 @@
 <?php
+session_start(); # P12
 require_once("fungsi.php");
 require_once("koneksi.php"); # P11
 
