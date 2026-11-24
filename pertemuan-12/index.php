@@ -23,38 +23,125 @@ while ($baris = mysqli_fetch_assoc($hasil)) {
 var_dump($dataKontak);
 echo "</pre>"; */
 
-// P9: Memproses data formulir dan menyimpannya ke dalam session.
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	$nama = trim((string) ($_POST["nama"] ?? ""));
-	$email = trim((string) ($_POST["email"] ?? ""));
-	$semesterForm = trim((string) ($_POST["semester"] ?? ""));
-	$tanggal = trim((string) ($_POST["tanggal"] ?? ""));
-	$jenisPesan = trim((string) ($_POST["jenis_pesan"] ?? ""));
-	$minat = $_POST["minat"] ?? [];
-	$prodi = trim((string) ($_POST["prodi"] ?? ""));
-	$pesan = trim((string) ($_POST["pesan"] ?? ""));
 
-	// Checkbox dapat mengirimkan lebih dari satu nilai.
-	if (!is_array($minat)) {
-		$minat = [];
+// P12: Mengambil dan memvalidasi data formulir.
+$errors = [];
+$statusValidasi = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+	// Mengambil data teks dari formulir.
+	$nama = is_string($_POST["nama"] ?? null)
+		? trim($_POST["nama"])
+		: "";
+
+	$email = is_string($_POST["email"] ?? null)
+		? trim($_POST["email"])
+		: "";
+
+	$semesterForm = is_string($_POST["semester"] ?? null)
+		? trim($_POST["semester"])
+		: "";
+
+	$tanggal = is_string($_POST["tanggal"] ?? null)
+		? trim($_POST["tanggal"])
+		: "";
+
+	$jenisPesan = is_string($_POST["jenis_pesan"] ?? null)
+		? trim($_POST["jenis_pesan"])
+		: "";
+
+	$prodi = is_string($_POST["prodi"] ?? null)
+		? trim($_POST["prodi"])
+		: "";
+
+	$pesan = is_string($_POST["pesan"] ?? null)
+		? trim($_POST["pesan"])
+		: "";
+
+	// Mengambil data checkbox.
+	$minatInput = $_POST["minat"] ?? [];
+	$minatValid = [];
+
+	if (is_array($minatInput)) {
+		foreach ($minatInput as $pilihan) {
+			if (is_string($pilihan) && in_array($pilihan, ["HTML", "CSS"], true)) {
+				$minatValid[] = $pilihan;
+			}
+		}
 	}
 
-	// Menyimpan semua data formulir ke dalam satu larik asosiatif di session.
-	$_SESSION["form_data"] = [
-		"nama"         => $nama,
-		"email"        => $email,
-		"semester"     => $semesterForm,
-		"tanggal"      => $tanggal,
-		"jenis_pesan"  => $jenisPesan,
-		"minat"        => $minat,
-		"prodi"        => $prodi,
-		"pesan"        => $pesan,
+	// Validasi nama.
+	if (strlen($nama) < 3 || strlen($nama) > 50) {
+		$errors[] = "Nama harus diisi 3 sampai 50 karakter.";
+	}
+
+	// Validasi email.
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$errors[] = "Alamat email tidak valid.";
+	}
+
+	// Validasi semester.
+	$semesterValid = filter_var($semesterForm, FILTER_VALIDATE_INT);
+
+	if ($semesterValid === false || $semesterValid < 1 || $semesterValid > 14) {
+		$errors[] = "Semester harus berupa angka 1 sampai 14.";
+	}
+
+	// Validasi tanggal.
+	$tanggalValid = false;
+
+	if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $tanggal)) {
+		$bagianTanggal = explode("-", $tanggal);
+
+		$tanggalValid = checkdate(
+			(int) $bagianTanggal[1],
+			(int) $bagianTanggal[2],
+			(int) $bagianTanggal[0]
+		);
+	}
+
+	if (!$tanggalValid) {
+		$errors[] = "Tanggal kunjungan tidak valid.";
+	}
+
+	// Validasi jenis pesan.
+	if (!in_array($jenisPesan, ["pertanyaan", "saran"], true)) {
+		$errors[] = "Jenis pesan tidak valid.";
+	}
+
+	// Validasi topik yang diminati.
+	if (count($minatValid) === 0) {
+		$errors[] = "Pilih minimal satu topik yang diminati.";
+	}
+
+	// Validasi program studi.
+	if (!in_array($prodi, ["SI", "TI"], true)) {
+		$errors[] = "Program studi tidak valid.";
+	}
+
+	// Validasi pesan.
+	if ($pesan === "" || strlen($pesan) > 300) {
+		$errors[] = "Pesan harus diisi dan maksimal 300 karakter.";
+	}
+
+	// Menyiapkan data setelah validasi.
+	$dataForm = [
+		"nama" => $nama,
+		"email" => $email,
+		"semester" => $semesterForm,
+		"tanggal" => $tanggal,
+		"jenis_pesan" => $jenisPesan,
+		"minat" => implode(", ", $minatValid),
+		"prodi" => $prodi,
+		"pesan" => $pesan
 	];
 
-	// PRG: mengarahkan kembali ke halaman sebelum menghasilkan keluaran HTML.
-	header("Location: index.php#contact");
-	exit;
+	if (count($errors) === 0) {
+		$statusValidasi = "Data berhasil melewati validasi. Penyimpanan ke database belum diterapkan.";
+	}
 }
+
 
 // P6: PHP dasar dan pemrograman sisi peladen
 // Bagian 1: Variabel dan konstanta
@@ -223,6 +310,20 @@ $teknologiWeb = ["HTML", "CSS", "JavaScript", "PHP", "MySQL"];
 				Kunjungi
 				<a target="_blank" href="https://github.com/<?= bersihkan(PROFIL_GITHUB); ?>">profil GitHub saya</a>.
 			</p>
+
+
+			<?php if (count($errors) > 0): ?>
+				<ul class="form-feedback-error">
+					<?php foreach ($errors as $error): ?>
+						<li><?= bersihkan($error); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			<?php elseif ($statusValidasi !== ""): ?>
+				<p class="form-feedback">
+					<?= bersihkan($statusValidasi); ?>
+				</p>
+			<?php endif; ?>
+
 
 			<form id="contactForm" class="js-contact-form" data-validation="contact" action="index.php" method="post" novalidate>
 				<div class="form-group">

@@ -32,3 +32,15 @@ CATATAN: Belum dilakukan implementasi operasi INSERT. Baseline P11 dipertahankan
 3. Mempertahankan fungsi dan koneksi yang sudah tersedia dari artefak P11.
 
 TUJUAN: Menyiapkan mekanisme session untuk pengelolaan old input dan flash message pada proses CREATE P12.
+
+### TAHAP 4: PENGAMBILAN DAN VALIDASI DATA FORMULIR
+
+1. Mengembangkan pemrosesan data formulir menggunakan POST.
+2. Mengambil delapan field formulir dengan pemeriksaan tipe data.
+3. Menerapkan validasi sisi peladen untuk setiap field.
+4. Memeriksa pilihan checkbox HTML dan CSS.
+5. Mengubah nilai checkbox menjadi string yang dipisahkan koma.
+6. Menyiapkan data formulir dalam larik asosiatif.
+7. Menampilkan pesan kesalahan apabila validasi gagal.
+
+CATATAN: Operasi INSERT belum diterapkan. Data yang lolos validasi belum disimpan ke database.
