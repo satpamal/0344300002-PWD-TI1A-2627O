@@ -44,3 +44,20 @@ TUJUAN: Menyiapkan mekanisme session untuk pengelolaan old input dan flash messa
 7. Menampilkan pesan kesalahan apabila validasi gagal.
 
 CATATAN: Operasi INSERT belum diterapkan. Data yang lolos validasi belum disimpan ke database.
+
+## Penerapan CREATE dengan MySQLi Prepared Statement
+
+Pada tahap ini, formulir kontak dikembangkan agar data yang telah lolos validasi PHP dapat disimpan ke tabel `tbl_kontak_nim`.
+
+Implementasi CREATE menggunakan MySQLi Prepared Statement dengan tahapan:
+
+1. Menggabungkan pilihan topik yang diminati menjadi satu nilai teks.
+2. Menyiapkan perintah SQL INSERT menggunakan placeholder.
+3. Mengikat nilai formulir ke parameter menggunakan `mysqli_stmt_bind_param()`.
+4. Menjalankan perintah INSERT menggunakan `mysqli_stmt_execute()`.
+5. Memeriksa keberhasilan penyimpanan data.
+6. Menutup statement menggunakan `mysqli_stmt_close()`.
+
+Setelah proses penyimpanan, aplikasi menerapkan pola Post/Redirect/Get (PRG). Jika penyimpanan berhasil, aplikasi menampilkan pesan keberhasilan dan mengosongkan formulir. Jika penyimpanan gagal, aplikasi menampilkan pesan kesalahan dan mempertahankan input pengguna.
+
+Data yang berhasil disimpan dapat diperiksa melalui tabel `tbl_kontak_nim` dan ditampilkan kembali menggunakan fitur READ yang telah dikembangkan pada pertemuan sebelumnya.

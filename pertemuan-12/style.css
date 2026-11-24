@@ -209,13 +209,30 @@ footer p {
   margin: 0;
 }
 
-.form-feedback-error {
-  color: #c62828;
+
+/* P12: Pesan hasil validasi formulir */
+.form-feedback-success {
+  padding: 12px 16px;
+  margin: 16px 0;
+  color: #166534;
+  background-color: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: 6px;
 }
 
-.form-feedback-success {
-  color: #2e7d32;
+.form-feedback-error {
+  padding: 12px 16px;
+  margin: 16px 0;
+  color: #991b1b;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
 }
+
+.form-feedback-error li {
+  margin-left: 20px;
+}
+
 
 /* Layout untuk viewport yang lebih lebar */
 @media (min-width: 768px) {
